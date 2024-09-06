@@ -1,0 +1,9 @@
+TimeUtc utc
+uint64 timestartup
+uint64 tow
+uint8 numsats
+uint8 fix
+geometry_msgs/Point poslla
+geometry_msgs/Vector3 velned
+geometry_msgs/Vector3 posu
+float32 velu

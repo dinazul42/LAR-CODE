@@ -1,0 +1,11 @@
+uint64                      timestartup
+VpeStatus                   vpestatus
+geometry_msgs/Vector3       yawpitchroll
+geometry_msgs/Quaternion    quaternion
+float32[9]                  dcm
+geometry_msgs/Vector3       magned
+geometry_msgs/Vector3       accelned
+geometry_msgs/Vector3       linearaccelbody
+geometry_msgs/Vector3       linearaccelned
+#geometry_msgs/Vector3       ypru
+#geometry_msgs/Vector3       heave
