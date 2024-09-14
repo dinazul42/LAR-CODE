@@ -21,6 +21,7 @@ import utm
 from ament_index_python.packages import get_package_share_directory
 autopilot_pkg_path = get_package_share_directory('autopilot_pkg')
 parameter_file_path = os.path.join(autopilot_pkg_path, 'autopilot_pkg', 'parameters.json')
+print(f"Current working directory: {os.getcwd()}")
 
 
 @dataclass
