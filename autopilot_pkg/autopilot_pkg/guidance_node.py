@@ -18,6 +18,10 @@ from functools import partial
 import random   
 import os
 import utm
+from ament_index_python.packages import get_package_share_directory
+autopilot_pkg_path = get_package_share_directory('autopilot_pkg')
+parameter_file_path = os.path.join(autopilot_pkg_path, 'autopilot_pkg', 'parameters.json')
+
 
 @dataclass
 class WaypointData():
@@ -91,10 +95,9 @@ class Guidance(Node):
     def __init__(self):
         """Guidance initial node."""
         super().__init__('guidance_node')
-
-        with open('/home/lar-kayak/src/autopilot_pkg/autopilot_pkg/parameters.json', 'r') as f:
+        print(f"Trying to open: /home/lar-kayak/src/autopilot_pkg/autopilot_pkg/parameters.json")
+        with open(parameter_file_path, 'r') as f:
             self.parameters = json.load(f)
-
         self.waypoint_subscriber = self.create_subscription(Waypoint, 'waypoint', self.callback_get_waypoint, 10)
         self.kayak_mode_subscriber = self.create_subscription(KayakMode, 'kayak_mode', self.callback_change_mode, 10)
         self.param_subscriber = self.create_subscription(Parameter, 'parameter', self.callback_parameter, 10)
