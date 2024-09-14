@@ -92,7 +92,7 @@ class Guidance(Node):
         """Guidance initial node."""
         super().__init__('guidance_node')
 
-        with open('/home/lar/Repositories/ros2_kayak/src/autopilot_pkg/autopilot_pkg/parameters.json', 'r') as f:
+        with open('/home/lar-kayak/src/autopilot_pkg/autopilot_pkg/parameters.json', 'r') as f:
             self.parameters = json.load(f)
 
         self.waypoint_subscriber = self.create_subscription(Waypoint, 'waypoint', self.callback_get_waypoint, 10)
